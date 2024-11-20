@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Similar Images</title>
+</head>
+<body>
+    <h1>Similar Images</h1>
+    <div>
+        {% for image in similar_images %}
+            <img src="{{ url_for('serve_jpg', filename=image.split('/')[-1]) }}" alt="Similar Image" style="width:200px; height:200px; margin:10px;">
+        {% endfor %}
+    </div>
+    <a href="/">Upload Another Image</a>
+</body>
+</html>
